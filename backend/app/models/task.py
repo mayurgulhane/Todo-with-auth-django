@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
-from db.session import Base
+from app.db.session import Base
 
 
 class Task(Base):
@@ -10,6 +10,10 @@ class Task(Base):
     description = Column(String, nullable=True)
     completed = Column(Boolean, default=False)
     owner_id = Column(Integer, ForeignKey("users.id"),nullable=False)
+
+
+
+    
 
 
     
