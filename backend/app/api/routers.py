@@ -43,7 +43,7 @@ def login_for_access_token(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid username or password"
         )
     token = auth.create_access_token(data={"sub": user.username})
-    return {"access_token": token, "token_type": "bearer"}
+    return {"access_token": token, "token_type": "bearer", "username": user.username }
 
 
 # Create Task Endpoint
