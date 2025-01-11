@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1>Task Manager</h1>
+            <div id="user-info">
+                <span id="username"></span> <!-- Username will be inserted here -->
+                <button id="logout-button" class="logout-btn">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Task Container -->
+    <div class="task-container">
+        <h2>Your Tasks
+            <button id="create-task-button" class="create-btn">Create Task</button>
+        </h2>
+        
+        <p id="no-task-message" style="display: none;">No tasks available. You can create a new task below.</p>
+        
+        <!-- Task Table -->
+        <table id="task-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="task-list"></tbody>
+        </table>
+    </div>
+
+    <!-- Create Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h2>Create a New Task</h2>
+            <form id="task-form">
+                <input type="text" id="task-title" placeholder="Task Title" required>
+                <input type="text" id="task-description" placeholder="Description">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="completed">
+                    <label for="completed">Completed</label>
+                </div>
+                <button type="submit">Save Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="tasks.js"></script>
+</body>
+</html>
